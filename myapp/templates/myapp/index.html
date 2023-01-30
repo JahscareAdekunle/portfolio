@@ -76,7 +76,7 @@
         <div class="max-width">
             <div class="logo"><a href="#">Heykinz <span> Tech </span></a></div>
             <ul class="menu">
-                <li><a href="#home" class="menu-btn">Home</a></li>
+                <li><a href="/" class="menu-btn">Home</a></li>
                 <li><a href="#about" class="menu-btn">About</a></li>
                 <li><a href="#services" class="menu-btn">Services</a></li>
                 <li><a href="{% url 'post' %}" class="menu-btn">Blog</a></li>
@@ -88,7 +88,7 @@
             </div>
         </div>
     </nav>
-
+{% block content %}
     <!-- home section start -->
     <section class="home" id="home">
         <div class="max-width">
@@ -256,7 +256,6 @@
             </div>
         </div>
     </section>
-
     <!-- contact section start -->
     <section class="contact" id="contact">
         <div class="max-width">
@@ -315,7 +314,7 @@
             </div>
         </div>
     </section>
-
+{% endblock %}
     <!-- footer section start -->
     <footer>
         <span>Created By <a href="#">Your Average Tech Bro </a> | <span class="far fa-copyright"></span> 2023 All rights reserved.</span>

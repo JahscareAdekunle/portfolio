@@ -1,7 +1,24 @@
-{% for post in blog %}
-  <h1> {{post.title}} </h1>
- <p> {{post.created_at|timesince}} </p>
-  <h5> <a href="{% url 'detail' post.slug %}">{{post.intro}} </a> </h5>
-  
-{% endfor %}
+{% extends 'myapp/index.html' %} 
 
+{% load static %}
+{% block content %}
+ <section class="teams" id="teams">
+        <div class="max-width">
+           
+            <div class="carousel owl-carousel">
+              {% for post in blog %}
+                <div class="card">
+                        <div class="text"><p> {{post.created_at|timesince}} </p> </div>
+                   <h2 class="title">
+                     {{post.title}}</h2>
+                      <a href="{% url 'detail' post.slug %}">{{post.intro}} </a>
+                    <div class="box">
+                        <img src="{% static 'images/profile-1.jpeg' %}" alt="">
+                        
+                    </div>
+                </div>
+              {% endfor %}
+              
+              {% for post in blog %}
+              {% endfor %}
+{% endblock %}
