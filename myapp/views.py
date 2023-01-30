@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from .models import Message 
+#get_objects_or_404
+from .models import Message ,Post, Comment 
+
 # Create your views here.
 def index(request):
   if request.method == "POST":
@@ -13,3 +15,12 @@ def index(request):
   
     
   return render(request,'myapp/index.html',{})
+  
+def post(request):
+  post = Post.objects.all()
+  return render(request,'myapp/blog.html',{"blog":post})
+  
+def detail(request,slug):
+  post = Post.objects.get(slug=slug)
+  return render(request,'myapp/detail.html',{'post':post})
+  

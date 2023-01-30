@@ -1,0 +1,7 @@
+{% for post in blog %}
+  <h1> {{post.title}} </h1>
+ <p> {{post.created_at|timesince}} </p>
+  <h5> <a href="{% url 'detail' post.slug %}">{{post.intro}} </a> </h5>
+  
+{% endfor %}
+
